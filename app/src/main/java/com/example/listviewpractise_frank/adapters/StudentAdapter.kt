@@ -15,7 +15,7 @@ class StudentAdapter(
 
 
         val inf = LayoutInflater.from(mContext)
-리
+
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
         var tempRow = convertView

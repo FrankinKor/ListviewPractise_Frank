@@ -2,12 +2,15 @@ package com.example.listviewpractise_frank
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.listviewpractise_frank.adapters.StudentAdapter
 import com.example.listviewpractise_frank.datas.Student
+import kotlinx.android.synthetic.main.activity_main.studentListView
 
 class MainActivity : AppCompatActivity() {
 
     val mStudentList = ArrayList<Student> ()
 
+    lateinit var mAdapter : StudentAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,8 +24,8 @@ class MainActivity : AppCompatActivity() {
         mStudentList.add(Student("현성김", 1901))
         mStudentList.add(Student("성민쩐", 1956))
 
+        mAdapter = StudentAdapter(this, R.layout.student_list_item, mStudentList)
 
-
-
+        studentListView.adapter = mAdapter
     }
 }
